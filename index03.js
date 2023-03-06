@@ -24,13 +24,13 @@
 // Удалите первый элемент и выведите его в консоль.
 // Вставьте «Country» и «Reggae» в начало массива.
 
-// const genres = ["Jazz", "Blues"];
-// genres.push("Рок-н-ролл");
+// const genres = ['Jazz', 'Blues'];
+// genres.push('Рок-н-ролл');
 // console.log(genres);
 // console.log(genres[0]);
 // console.log(genres[genres.length - 1]);
 // console.log(genres.slice(0, 1));
-// genres.splice(0, 0, "Country", "Reggae");
+// genres.splice(0, 0, 'Country', 'Reggae');
 // console.log(genres);
 
 // const moreGenres = ["Country", "Reggae"];
@@ -49,8 +49,8 @@
 // Example 3 - Перебор массива
 // Напиши скрипт для перебора массива fruits циклом for. Для каждого элемента массива выведи в консоль строку в формате номер_элемента: значение_элемента. Нумерация элементов должна начинаться с 1.
 
-// const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
-// for (let i = 0; i < fruits.length; i++) {
+// const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+// for (let i = 0; i < fruits.length; i += 1) {
 //   console.log(`${i + 1}:${fruits[i]}`);
 // }
 
@@ -154,9 +154,9 @@
 // console.log(longestString);
 
 // Функция  поиска самого длинного слова в строке
-
+// findLongestWord('QWEWWrs sdsdasd qweHJGDHJSF')
 // function findLongestWord(string) {
-//   const stringArr = string.split(" ");
+//   const stringArr = string.split(' ');
 //   let longestString = stringArr[0];
 //   for (const word of stringArr) {
 //     if (word.length > longestString.length) {
@@ -185,8 +185,9 @@
 
 // console.log(newArr);
 // const newArrSort = [];
-// for (let i = 0; i < newArr.length; i = 1) {
-//   const newArrEl = newArr[i];
+// let newArrEl = 0;
+// for (let i = 0; i < newArr.length; i += 1) {
+//   let newArrEl = newArr[i];
 //   if (newArrEl === newArr[i + 1]) {
 //     newArrSort.push(NewArrEl);
 //   }
