@@ -29,21 +29,21 @@
 // console.log(genres);
 // console.log(genres[0]);
 // console.log(genres[genres.length - 1]);
-// console.log(genres.slice(0, 1));
+// console.log(genres.splice(0, 1)[0]);
 // genres.splice(0, 0, 'Country', 'Reggae');
 // console.log(genres);
 
-// const moreGenres = ["Country", "Reggae"];
+// const moreGenres = ['Country', 'Reggae'];
 // moreGenres.push(...genres);
 // console.log(moreGenres);
 
 // Example 2 - Массивы и строки
 // Напиши скрипт для вычисления площади прямоугольника со сторонами, значения которых хранятся в переменной values в виде строки. Значения гарантированно разделены пробелом.
 
-// const values = "8 11";
-// const valuesArr = values.split(" ");
+// const values = '8 11';
+// const valuesArr = values.split(' ');
 // console.log(valuesArr);
-// const rectangleArea = valuesArr[0] * valuesArr[1];
+// const rectangleArea = Number(valuesArr[0]) * Number(valuesArr[1]);
 // console.log('Area of ​​a rectangle equal = ', rectangleArea);
 
 // Example 3 - Перебор массива
@@ -52,6 +52,9 @@
 // const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
 // for (let i = 0; i < fruits.length; i += 1) {
 //   console.log(`${i + 1}:${fruits[i]}`);
+// }
+// for (const i in fruits) {  //i - vsegda stroka!!!
+//   console.log(`${Number(i)+1}:${fruits[i]}`);
 // }
 
 // Example 4 - Массивы и циклы
@@ -75,18 +78,55 @@
 // const formatedString = formatedStringArr.join(" ");
 // console.log(formatedString);
 
+// const string = 'Welcome to the future';
+// console.log(
+//   string
+//     .split(' ')
+//     .slice(1, string.length - 1)
+//     .join(' ')
+// );
+
 // Example 6 - Массивы и строки
 // Напиши скрипт который «разворачивает» строку (обратный порядок букв) и выводит ее в консоль.
 
-// const string = "Welcome to the future";
-// const reverseString = string.split("").reverse().join("");
+// const string = 'Welcome to the future';
+// const reverseString = string.split('').reverse().join('');
 // console.log(reverseString);
+
+// const string = 'Welcome to the future';
+// let newString = [];
+// for (let i = string.length - 1; i >= 0; i -= 1) {
+//   newString.push(string[i]);
+// }
+// newString = newString.join('');
+// console.log(newString);
 
 // Example 7 - Сортировка массива с циклом
 // Напиши скрипт сортировки массива строк в алфавитном порядке по первой букве элемента.
 
 // const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
 // console.log(langs.sort());
+
+// КАК МЕНЯТЬ МЕСТАМИ ЄЛЕМЕНТІ В МАССИВЕ
+// let temp = langs[1];
+// langs[1] = langs[2];
+// console.log(langs);
+// langs[2] = temp;
+// console.log(langs);
+//------------------------------------
+// Цикл в цикле, сортировка массива по алфавиту
+
+// const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
+// for (let i = 0; i < langs.length - 1; i += 1) {
+//   for (let j = i + 1; j < langs.length; j += 1) {
+//     if (langs[i][0] > langs[j][0]) {      // [0] чтобы обратиться к первой букве
+//       let temp = langs[i];
+//       langs[i] = langs[j];
+//       langs[j] = temp;
+//     }
+//   }
+// }
+// console.log(langs);
 
 // Example 8 - Поиск элемента
 // Напиши скрипт поиска самого маленького числа в массиве. Код должен работать для любого массива чисел. Используй цикл для решения задачи.
