@@ -100,6 +100,10 @@
 // }
 // console.log(min);
 
+// ========================================================================== //
+// ============================ Автопроверки тесты ========================== //
+// ========================================================================== //
+
 //Создание slug строки
 // slugify("QWWdsd dsds sdsds SDdsd");
 // function slugify(title) {
@@ -120,7 +124,7 @@
 // }
 // calculateTotal(3);
 
-// // Сумма всех цифр массива
+// // Сумма всех чисел массива
 // const order = [1, 2, 3];
 // let total = 0;
 // for (i = 0; i < order.length; i += 1) {
@@ -182,14 +186,75 @@
 // const array1 = [1, 3, 5];
 // const array2 = [0, 8, 5, 3];
 // const newArr = array1.concat(array2).sort();
-
-// console.log(newArr);
 // const newArrSort = [];
-// let newArrEl = 0;
-// for (let i = 0; i < newArr.length; i += 1) {
-//   let newArrEl = newArr[i];
+// console.log(newArr);
+// for (let i = 0; i < newArr.length; i++) {
+//   const newArrEl = newArr[i];
 //   if (newArrEl === newArr[i + 1]) {
-//     newArrSort.push(NewArrEl);
+//     newArrSort.push(newArrEl);
 //   }
 // }
 // console.log(newArrSort);
+
+// ОБЩИЕ ЭЛЕМЕНТЫ МАССИВОВ
+// function getCommonElements(array1, array2) {
+//   const newArr = array1.concat(array2).sort();
+//   const newArrSort = [];
+//   // console.log(newArr);
+//   for (let i = 0; i < newArr.length; i++) {
+//     const newArrEl = newArr[i];
+//     if (newArrEl === newArr[i + 1]) {
+//       newArrSort.push(newArrEl);
+//     }
+//   }
+//   return newArrSort;
+// }
+
+// ОБЩИЕ ЭЛЕМЕНТЫ МАССИВОВ
+// function getCommonElements(array1, array2) {
+//   // Change code below this line
+//   const newArr = array1.concat(array2).sort();
+//   const newArrSort = [];
+//   if (array1 !== undefined && array2 !== undefined) {
+//     for (let i = 0; i < newArr.length; i++) {
+//       const newArrEl = newArr[i];
+//       if (newArrEl === newArr[i + 1]) {
+//         newArrSort.push(newArrEl);
+//       }
+//       newArrSort.includes();
+//     }
+//     return newArrSort;
+//     // Change code above this line
+//   }
+// }
+
+// ФУНКЦИЯ ОБЩИЕ ЭЛЕМЕНТЫ МАССИВОВ
+// function getCommonElements(array1, array2) {
+//   const newArr = [];
+//   for (let i = 0; i < array1.length; i += 1) {
+//     if (array2.includes(array1[i])) {
+//       newArr.push(array1[i]);
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // [10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
+
+// МАСИИВ ЧЕТНЫХ ЧИСЕЛ от START to END
+// function getEvenNumbers(start, end) {
+//   // Change code below this line
+//   const evenArr = [];
+//   for (let i = start; i <= end; i++) {
+//     if (i % 2 === 0) {
+//       evenArr.push(i);
+//     }
+//   }
+//   return evenArr;
+
+//   // Change code above this line
+// }
+// console.log(getEvenNumbers(1, 10));
