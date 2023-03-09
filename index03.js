@@ -310,14 +310,14 @@
 // Если введён пароль "Я админ", то вывести строку "Здравствуйте!"
 // Иначе выводить строку "Неверный пароль"
 
-let login = prompt('Enter login:');
-let password = '';
+// let login = prompt('Enter login:');
+// let password = '';
 
-if (login !== 'admin') {
-  alert('I dont know u!!!');
-}
-if (login === 'admin') {
-  prompt('Enter password:');
-} else if (password === 'password') {
-  alert('HELLO!');
-} else alert('WRONG!');
+// if (login !== 'admin') {
+//   alert('I dont know u!!!');
+// }
+// if (login === 'admin') {
+//   prompt('Enter password:');
+// } else if (password === 'password') {
+//   alert('HELLO!');
+// } else alert('WRONG!');
