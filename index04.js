@@ -7,7 +7,6 @@
 
 // function calcBMI(weight, height) {
 //   let bmi;
-
 //   if (weight.includes(',') || height.includes(',')) {
 //     return (bmi = String(
 //       Number(weight.split(',').join('.')) /
@@ -15,12 +14,28 @@
 //           Number(height.split(',').join('.')))
 //     )).slice(0, 4);
 //   }
-
 //   return (bmi = String(
 //     Number(weight) / (Number(height) * Number(height))
 //   )).slice(0, 4);
 // }
+// const bmi = calcBMI('88,3', '1.75');
+// console.log(bmi); // 28.8
+//
 
+// function calcBMI(weight, height) {
+//   weight = convertToDecimal(weight);
+//   height = convertToDecimal(height);
+
+//   const result = weight / (height * height);
+
+//   return getFixedNumber(result);
+// }
+// function convertToDecimal(str) {
+//   return Number(str.replace(',', '.'));
+// }
+// function getFixedNumber(num) {
+//   return Number(num).toFixed(1);
+// }
 // const bmi = calcBMI('88,3', '1.75');
 // console.log(bmi); // 28.8
 
@@ -90,3 +105,76 @@
 //   'Jacob,William,Solomon,Artemis',
 //   '89001234567,89001112233,890055566377,890055566300'
 // ));
+
+// Наібільше число в масиві
+// function findLagestNumber(numbers) {
+//   let max = numbers[0];
+//   for (const num of numbers) {
+//     if (num > max) max = num;
+//   } return max;
+// }
+// console.log(findLagestNumber([2, 3, 5, 20, 2, 0, 255]));
+
+// Example 7 - Среднее значение
+// Напишите функцию calAverage() которая принимает произвольное кол-во аргументов и возвращает их среднее значение. Все аругменты будут только числами.
+
+// function calAverage() {
+//   let sum = 0;
+//   for (const argument of arguments) {
+//     sum += argument;
+//   }
+//   return sum / arguments.length;
+// }
+
+// console.log(calAverage(1, 2, 3, 4)); // 2.5
+// console.log(calAverage(14, 8, 2)); // 8
+// console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
+// Example 9 - Коллекция курсов (includes, indexOf, push и т. д.)
+// Напишите функции для работы с коллекцией обучающих курсов courses:
+
+// addCourse(name) - добавляет курс в конец коллекции
+// removeCourse(name) - удаляет курс из коллекции
+// updateCourse(oldName, newName) - изменяет имя на новое
+//
+//
+//3 funcii
+//
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+// function addCourse(name) {
+//   if (courses.includes(name)) {
+//     console.log('Course already exist!!!!!!');
+//     return;
+//   }
+//   courses.push(name);
+// }
+
+// function removeCourse(name) {
+//   const index = courses.indexOf(name);
+//   if (index === -1) {
+//     console.log('Course dont exist');
+//   } else courses.splice(index, 1);
+// }
+
+// function updateCourse(oldName, newName) {
+//   const index = courses.indexOf(oldName);
+//   if (courses.includes(newName)) {
+//     console.log('Course already exist!!!!!!');
+//     return;
+//   }
+//   else if (index === -1) {
+//       console.log('Course do not exist!!!!!!!');
+//     } courses[index] = newName;
+//   }
+
+// addCourse('Express');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+// addCourse('CSS'); // 'У вас уже есть такой курс'
+// console.log(courses);
+// removeCourse('React');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// removeCourse('Vue'); // 'Курс с таким имененем не найден'
+
+// updateCourse('Express', 'NestJS');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
