@@ -88,23 +88,25 @@
 // Example 5 - Логирование контактов
 // Напиши функцию printContactsInfo(names, phones) которая выводит в консоль имя и телефонный номер пользователя. В параметры names и phones будут переданы строки имен и телефонных номеров, разделенные запятыми. Порядковый номер имен и телефонов в строках указывают на соответствие. Количество имен и телефонов гарантированно одинаковое.
 
-// function printContactsInfo(names, phones) {
-//   const namesArr = names.split(',');
-//   console.log(namesArr);
-//   const phonesArr = phones.split(',');
-//   console.log(phonesArr);
+function printContactsInfo(names, phones) {
+  const namesArr = names.split(',');
+  console.log(namesArr);
+  const phonesArr = phones.split(',');
+  console.log(phonesArr);
 
-//   const result = [];
-//   for (let i = 0; i < namesArr.length; i++) {
-//     result.push(namesArr[i] + ' : ' + phonesArr[i]);
-//   }
-//   return result;
-// }
+  const result = [];
+  for (let i = 0; i < namesArr.length; i++) {
+    result.push(namesArr[i] + ' : ' + phonesArr[i]);
+  }
+  return result;
+}
 
-// console.log((printContactsInfo)(
-//   'Jacob,William,Solomon,Artemis',
-//   '89001234567,89001112233,890055566377,890055566300'
-// ));
+console.log(
+  printContactsInfo(
+    'Jacob,William,Solomon,Artemis',
+    '89001234567,89001112233,890055566377,890055566300'
+  )
+);
 
 // Наібільше число в масиві
 // function findLagestNumber(numbers) {
