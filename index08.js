@@ -95,20 +95,19 @@ const cars = [
 
 // const makeCarsWithDiscount = (cars, discount) => {
 //   return cars.map(car => ({
-//     ...cars,
-//     price: car.price * discount,
+//     ...car,
+//     price: car.price * (1 - discount),
 //   }));
 // };
 
-// console.log(makeCarsWithDiscount(cars, 0.2));
+// console.table(makeCarsWithDiscount(cars, 0.2));
 // console.table(makeCarsWithDiscount(cars, 0.4));
 
 //Example 3 - Метод filter
 //Пусть функция filterByPrice возвращает массив автомобилей цена которых меньше чем значение параметра threshold.
 
-// const filterByPrice = (cars, threshold) => {
-//   return cars.filter(car => car.price < threshold);
-// };
+// const filterByPrice = (cars, threshold) => cars.filter(({price}) => price < threshold);
+// ;
 
 // console.table(filterByPrice(cars, 30000));
 // console.table(filterByPrice(cars, 25000));
@@ -134,9 +133,8 @@ const cars = [
 
 // Example 6 - Метод find
 
-// const getCarByModel = (cars, model) => {
-//   return cars.find(car => car.model === model)
-// };
+// const getCarByModel = (cars, model) =>
+//   cars.find(({ model: carModel }) => model === carModel);
 
 // console.log(getCarByModel(cars, 'F-150'));
 // console.log(getCarByModel(cars, 'CX-9'));
@@ -145,7 +143,7 @@ const cars = [
 // Пусть функция sortByAscendingAmount возвращает новый массив автомобилей отсортированный по возврастанию значения свойства amount.
 
 // const sortByAscendingAmount = cars => {
-//   return cars.sort((a, b) => a.amount - b.amount);
+//   return [...cars].sort((a, b) => a.amount - b.amount);
 // };
 
 // console.table(sortByAscendingAmount(cars));
@@ -154,7 +152,7 @@ const cars = [
 // Пусть функция sortByDescendingPrice возвращает новый массив автомобилей отсортированный по убыванию значения свойства price.
 
 // const sortByDescendingPrice = cars => {
-//   return cars.sort((a, b) => b.price - a.price);
+//   return [...cars].sort((a, b) => b.price - a.price);
 // };
 
 // console.table(sortByDescendingPrice(cars));
@@ -163,9 +161,13 @@ const cars = [
 // Пусть функция sortByModel возвращает новый массив автомобилей отсортированный по названию модели в алфавитном и обратном алфавитном порядке, в засисимости от значения параметра order.
 
 // const sortByModel = (cars, order) => {
-//   return cars.sort((a, b) => { a.model - b.model;
-//     if (order === 'asc') return a.model - b.model;
-//     if (order === 'desc') return b.model - a.model;
+//   return [...cars].sort((a, b) => {
+//     switch (order) {
+//       case 'asc':
+//         return a.model.localeCompare(b.model);
+//       case 'desc':
+//         b.model.localeCompare(a.model);
+//     }
 //   });
 // };
 
@@ -176,7 +178,7 @@ const cars = [
 // Пусть функция getTotalAmount возвращает общее количество автомобилей(значение свойств amount).
 
 // const getTotalAmount = cars => {
-//   return cars.reduce((totalPrice, car) => totalPrice + car.price, 0);
+//   return cars.reduce((acc, { amount }) => acc + amount, 0);
 // };
 
 // console.log(getTotalAmount(cars));
