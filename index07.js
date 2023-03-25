@@ -266,7 +266,6 @@
 // console.log(calculateAverage(27, 43, 2, 8, 36)); // 23.2
 
 // AUTOCHECK#4
-
 // const users = [
 //   {
 //     name: 'Moore Hensley',
@@ -276,7 +275,6 @@
 //     isActive: false,
 //     balance: 2811,
 //     gender: 'male',
-//     age: 37,
 //   },
 //   {
 //     name: 'Sharlene Bush',
@@ -286,7 +284,6 @@
 //     isActive: true,
 //     balance: 3821,
 //     gender: 'female',
-//     age: 34,
 //   },
 //   {
 //     name: 'Ross Vazquez',
@@ -296,7 +293,6 @@
 //     isActive: false,
 //     balance: 3793,
 //     gender: 'male',
-//     age: 24,
 //   },
 //   {
 //     name: 'Elma Head',
@@ -306,7 +302,6 @@
 //     isActive: true,
 //     balance: 2278,
 //     gender: 'female',
-//     age: 21,
 //   },
 //   {
 //     name: 'Carey Barr',
@@ -316,7 +311,6 @@
 //     isActive: true,
 //     balance: 3951,
 //     gender: 'male',
-//     age: 27,
 //   },
 //   {
 //     name: 'Blackburn Dotson',
@@ -326,7 +320,6 @@
 //     isActive: false,
 //     balance: 1498,
 //     gender: 'male',
-//     age: 38,
 //   },
 //   {
 //     name: 'Sheree Anthony',
@@ -336,12 +329,10 @@
 //     isActive: true,
 //     balance: 2764,
 //     gender: 'female',
-//     age: 39,
 //   },
 // ];
 
-// const getUsersWithFriend = (users, friendName) => {
-//   return users.filter(user => user.friends.includes(friendName));
-// };
+// const sortByName = users => [...users].sort((a, b) => a.name - b.name);
+// console.table(sortByName(users));
 
-// console.log(getUsersWithFriend(users, 'Briana Decker'));
+
