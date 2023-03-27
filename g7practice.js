@@ -136,3 +136,16 @@
 
 //  Напишите функцию, которая принимает на вход массив чисел и возвращает новый массив, содержащий только те числа, которые повторяются в исходном массиве более одного раза.
 // const numbers1 = [1, 2, 3, 4, 5, 1, 2, 3, 4, 6];
+
+function uniqueNumbers(numbers) {
+  return numbers.reduce((uniqueArr, number) => {
+    if (numbers.indexOf(number) === numbers.lastIndexOf(number)) {
+      uniqueArr.push(number);
+    }
+    return uniqueArr;
+  }, []);
+}
+
+const numbers = [2, 10, 2, 47, 13, 10, 18, 18];
+const uniqueNumbersArr = uniqueNumbers(numbers);
+console.log(uniqueNumbersArr);
