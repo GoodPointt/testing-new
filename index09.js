@@ -145,19 +145,19 @@
 //
 //
 //
-const customer = {
-  firstName: 'Jacob',
-  lastName: 'Mercer',
-  getFullName() {
-    console.log(this);
-    return `${this.firstName} ${this.lastName}`;
-  },
-};
+// const customer = {
+//   firstName: 'Jacob',
+//   lastName: 'Mercer',
+//   getFullName() {
+//     console.log(this);
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
 
-function makeMessage(callback) {
-  console.log(callback);
-  // callback() это вызов метода getFullName без объекта
-  console.log(`Обрабатываем заявку от ${callback()}.`);
-}
+// function makeMessage(callback) {
+//   console.log(callback);
+//   // callback() это вызов метода getFullName без объекта
+//   console.log(`Обрабатываем заявку от ${callback()}.`);
+// }
 
-makeMessage(customer.getFullName.bind(customer)); // Будет ошибка при вызове функции
+// makeMessage(customer.getFullName.bind(customer)); // Будет ошибка при вызове функции
