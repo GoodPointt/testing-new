@@ -163,50 +163,103 @@
 // }
 // Добавь методы addNote(note), removeNote(text) и updatePriority(text, newPriority).
 
-class Notes {
-  static Priority = {
-    LOW: 'low',
-    NORMAL: 'normal',
-    HIGH: 'high',
-  };
+// class Notes {
+//   static Priority = {
+//     LOW: 'low',
+//     NORMAL: 'normal',
+//     HIGH: 'high',
+//   };
 
-  constructor(items = []) {
-    this.items = items;
+//   constructor(items = []) {
+//     this.items = items;
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+
+//   removeNote(text) {
+//     // const index = this.items.findIndex(({ text: noteText }) => text === noteText)
+//     // this.items.splice(index, 1)
+
+//     this.items = this.items.filter(({ text: noteText }) => text !== noteText);
+//   }
+
+//   updateNote(text, newPriority) {
+//     const targetObj = this.items.find(
+//       ({ text: noteText }) => text === noteText
+//     );
+//     console.log(targetObj);
+//     targetObj.priority = newPriority;
+//   }
+// }
+
+// const myNotes = new Notes([]);
+
+// myNotes.addNote({ text: 'Моя первая заметка', priority: Notes.Priority.LOW });
+// console.log(myNotes.items);
+
+// myNotes.addNote({
+//   text: 'Моя вторая заметка',
+//   priority: Notes.Priority.NORMAL,
+// });
+// console.log(myNotes.items);
+
+// myNotes.removeNote('Моя первая заметка');
+// console.log(myNotes.items);
+
+// myNotes.updateNote('Моя вторая заметка', Notes.Priority.HIGH);
+// console.log(myNotes.items);
+
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
   }
 
-  addNote(note) {
-    this.items.push(note);
+  get email() {
+    return this.email;
   }
 
-  removeNote(text) {
-    // const index = this.items.findIndex(({ text: noteText }) => text === noteText)
-    // this.items.splice(index, 1)
-
-    this.items = this.items.filter(({ text: noteText }) => text !== noteText);
-  }
-
-  updateNote(text, newPriority) {
-    const targetObj = this.items.find(
-      ({ text: noteText }) => text === noteText
-    );
-    console.log(targetObj);
-    targetObj.priority = newPriority;
+  set email(newEmail) {
+    this.email = newEmail;
   }
 }
+class Admin extends User {
+  // Change code below this line
 
-const myNotes = new Notes([]);
+  static AccessLevel = {
+    BASIC: 'basic',
+    SUPERUSER: 'superuser',
+  };
 
-myNotes.addNote({ text: 'Моя первая заметка', priority: Notes.Priority.LOW });
-console.log(myNotes.items);
+  constructor({ email, accessLevel, blacklistedEmails = [] }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    this.blacklistedEmails = blacklistedEmails;
+  }
 
-myNotes.addNote({
-  text: 'Моя вторая заметка',
-  priority: Notes.Priority.NORMAL,
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+
+  isBlacklisted(email) {
+    this.blacklistedEmails.some(el => el === email);
+  }
+
+  // Change code above this line
+}
+
+const mango = new Admin({
+  email: 'mango@mail.com',
+  accessLevel: Admin.AccessLevel.SUPERUSER,
 });
-console.log(myNotes.items);
 
-myNotes.removeNote('Моя первая заметка');
-console.log(myNotes.items);
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
 
-myNotes.updateNote('Моя вторая заметка', Notes.Priority.HIGH);
-console.log(myNotes.items);
+mango.blacklist('poly@mail.com');
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted('mango@mail.com')); // false
+console.log(mango.isBlacklisted('poly@mail.com')); // true
