@@ -57,9 +57,9 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
 refs.addPost.addEventListener('click', handlerAddPost);
 
 function handlerAddPost() {
-  refs.formWrapper.innerHTML = `<form action="submit" class="js-form-add">
-        <input type="text" name="title" />
-        <textarea name="body" id="" cols="30" rows="10"></textarea>
+  refs.formWrapper.innerHTML = `<form style="width: 300px; display: flex; gap: 10px; flex-direction: column" action="submit" class="js-form-add">
+        <input type="text" placeholder="Your name..." name="title" />
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Your comment..."></textarea>
         <button>Post coment</button>
       </form>`;
 
