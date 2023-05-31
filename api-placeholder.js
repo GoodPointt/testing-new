@@ -83,7 +83,7 @@ function handlerFormSubmit(e) {
     })
     .catch(
       error =>
-        (refs.errorMsg.innerHTML = `Oops! Something gona wrong. Try again! (${error})`)
+        (refs.errorMsg.innerHTML = `Oops! Something gonna wrong. Try again! (${error})`)
     )
     .finally(() => {
       refs.formWrapper.innerHTML = '';

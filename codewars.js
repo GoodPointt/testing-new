@@ -81,9 +81,9 @@
 
 // console.log(highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4')); //'42 -9';
 
-function paperwork(n, m) {
-  if (n < 0 || m < 0) return 0;
-  return n * m;
-}
+// function paperwork(n, m) {
+//   if (n < 0 || m < 0) return 0;
+//   return n * m;
+// }
 
-console.log(paperwork(-5, 5));
+// console.log(paperwork(-5, 5));
