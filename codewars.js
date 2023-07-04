@@ -87,3 +87,134 @@
 // }
 
 // console.log(paperwork(-5, 5));
+
+// const summation = num => {
+//   let sum = 0;
+//   for (let i = 0; i <= num; i++) {
+//     sum = sum + i;
+//   }
+//   return sum;
+// };
+
+// summation(8);
+
+// function removeChar(str) {
+//   return str.slice(1, -1);
+// }
+
+// console.log(removeChar('abvgd'));
+
+// function sumArray(array) {
+//   if (array === null || array.length > 2 || array === undefined) return 0;
+
+//   return [...array]
+//     .sort((a, b) => a - b)
+//     .slice(1, -1)
+//     .reduce((acc, el) => acc + el, 0);
+// }
+
+// console.log(sumArray([6, 2, 1, 8, 10]));
+
+// const reverseSeq = n => {
+//   let arr = [];
+
+//   for (let i = 1; i <= n; i++) {
+//     let num = 0;
+//     num += i;
+//     arr.push(num);
+//   }
+//   return arr.reverse();
+// };
+
+// console.log(reverseSeq(5));
+
+// function smash(words) {
+//   return words.join(' ');
+// }
+
+// console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+
+// const isSquare = n => (Math.sqrt(n) % 1 === 0 ? true : false);
+
+// console.log(isSquare(25));
+
+// function findNextSquare(sq) {
+//   const sqrt = Math.sqrt(sq);
+//   return sqrt % 1 === 0 ? (sqrt + 1) ** 2 : -1;
+// }
+
+// console.log(findNextSquare(121));
+
+// function countPositivesSumNegatives(input) {
+//   if (!input || input.length === 0) return [];
+//   const positiveArr = [];
+//   const negativeArr = [];
+
+//   input.filter(el => (el > 0 ? positiveArr.push(el) : negativeArr.push(el)));
+
+//   return [positiveArr.length, negativeArr.reduce((acc, el) => acc + el, 0)];
+// }
+
+// console.log(countPositivesSumNegatives([1, 2, 3, -2, -100]));
+
+// function bmi(weight, height) {
+//   let bmi = weight / height ** 2;
+
+//   if (bmi <= 18.5) return 'Underweight';
+
+//   if (bmi <= 25.0) return 'Normal';
+
+//   if (bmi <= 30.0) return 'Overweight';
+
+//   if (bmi > 30) return 'Obese';
+// }
+
+// console.log(bmi(75, 1.78));
+
+// function filter_list(l) {
+//   return l.filter(el => typeof el === 'number');
+// }
+
+// // filter_list([1, 2, 'a', 'b']) == [1, 2];
+// // filter_list([1, 'a', 'b', 0, 15]) == [1, 0, 15];
+// // filter_list([1, 2, 'aasf', '1', '123', 123]) == [1, 2, 123];
+// console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
+
+// function digitize(n) {
+//   return n
+//     .toString()
+//     .split('')
+//     .reverse()
+//     .map(el => Number(el));
+// }
+
+// console.log(digitize(123456));
+
+// function getSum(a, b) {
+//   if (a === b) return a;
+//   let sum = 0;
+//   if (a < b) {
+//     for (let i = a; i <= b; i++) {
+//       sum += i;
+//     }
+//   }
+//   if (a > b) {
+//     for (let i = b; i <= a; i++) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(getSum(-1, 2));
+
+// function removeSmallest(numbers) {
+//   if (!numbers.length) return [];
+
+//   min = Math.min(...numbers);
+//   index = numbers.indexOf(min);
+//   filteredArr = numbers.filter((_, i) => i !== index);
+//   return filteredArr;
+// }
+
+// console.log(removeSmallest([1, 2, 3, 4, 5]));
