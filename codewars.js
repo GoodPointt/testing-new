@@ -218,3 +218,83 @@
 // }
 
 // console.log(removeSmallest([1, 2, 3, 4, 5]));
+
+// function ipToNum(ipAddress) {
+//   const octets = ipAddress.split('.').map(Number);
+//   console.log((octets[0] >>> 0).toString(2).padStart(8, '0'));
+//   console.log((octets[1] >>> 0).toString(2).padStart(8, '0'));
+//   console.log((octets[2] >>> 0).toString(2).padStart(8, '0'));
+//   console.log((octets[3] >>> 0).toString(2).padStart(8, '0'));
+//   const binaryString = octets
+//     .map(octet => (octet >>> 0).toString(2).padStart(8, '0'))
+//     .join('');
+//   return parseInt(binaryString, 2);
+// }
+
+// console.log(ipToNum('192.169.0.1'));
+
+// function numToIp(number) {
+//   const binaryString = (number >>> 0).toString(2).padStart(32, '0');
+//   const octets = [];
+//   for (let i = 0; i < 32; i += 8) {
+//     octets.push(parseInt(binaryString.substr(i, 8), 2));
+//   }
+//   return octets.join('.');
+// }
+
+// function findOdd(Arr) {
+//   let result = 0;
+//   for (const num of Arr) {
+//     result ^= num;
+//   }
+//   return result;
+// }
+
+// console.log(findOdd([1, 1, 2, 2, 2]));
+
+// const findOdd = Arr => Arr.reduce((acc, el) => acc ^ el);
+
+// function findEvenOccurringElement(arr) {
+//   return arr.reduce((acc, el) => acc ^ el);
+// }
+// console.log(findEvenOccurringElement([1, 1, 1, 2, 2]));
+
+// console.log(findOdd([1, 1, 2, 2, 2]));
+
+// const rakeGarden = garden =>
+//   garden
+//     .split(' ')
+//     .filter(el => el === 'rock' || el === 'gravel')
+//     .join(' ');
+
+// const rakeGarden = garden =>
+//   garden
+//     .split(' ')
+//     .map(el => (el !== 'rock' ? 'gravel' : el))
+//     .join(' ');
+
+// console.log(
+//   rakeGarden(
+//     (garden =
+//       'gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel ant gravel gravel gravel gravel rock slug gravel gravel gravel gravel gravel snail gravel gravel rock gravel snail slug gravel gravel spider gravel gravel gravel gravel gravel gravel gravel gravel moss gravel gravel gravel snail gravel gravel gravel ant gravel gravel moss gravel gravel gravel gravel snail gravel gravel gravel gravel slug gravel rock gravel gravel rock gravel gravel gravel gravel snail gravel gravel rock gravel gravel gravel gravel gravel spider gravel rock gravel gravel')
+//   )
+// );
+
+// const uniqueInOrder = iterable => {
+//   const result = [];
+//   let lastElement = null;
+
+//   for (const element of iterable) {
+//     if (element !== lastElement) result.push(element);
+//     lastElement = element;
+//   }
+//   return result;
+// };
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+
+// var uniqueInOrder = function (iterable) {
+//   return [...iterable].filter((a, i) => a !== iterable[i - 1]);
+// };
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
